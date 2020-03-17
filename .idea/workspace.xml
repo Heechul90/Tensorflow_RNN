@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2980621f-4311-4dd3-888f-66688b12abcd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/text_generation/lstm_text_generation(rnn모델로).py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/text_generation/lstm_text_generation.py" beforeDir="false" afterPath="$PROJECT_DIR$/text_generation/lstm_text_generation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/text_generation/lstm_text_generation(rnn모델로).py" beforeDir="false" afterPath="$PROJECT_DIR$/text_generation/lstm_text_generation(rnn모델로).py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/text_generation/text_generation.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/text_generation/text_generation.pptx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,15 +16,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/text_generation/rnn_text_generation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="111" column="38" lean-forward="true" selection-start-line="111" selection-start-column="38" selection-end-line="111" selection-end-column="38" />
+            <state relative-caret-position="155">
+              <caret line="104" column="63" selection-start-line="104" selection-start-column="54" selection-end-line="104" selection-end-column="63" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/text_generation/lstm_text_generation(rnn모델로).py">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="161" selection-start-line="161" selection-end-line="161" />
+              <folding>
+                <element signature="e#306#325#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -61,12 +66,13 @@
         <option value="$PROJECT_DIR$/rnn/LSTM을 이용한 로이터 뉴스 카테고리 분류하기.py" />
         <option value="$PROJECT_DIR$/rcnn/LSTM과 CNN의 조합을 이용한 영화 리뷰 분류하기.py" />
         <option value="$PROJECT_DIR$/text_generation/lstm_text_generation.py" />
+        <option value="$PROJECT_DIR$/text_generation/lstm_text_generation(rnn모델로).py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="150" />
-    <option name="y" value="92" />
+    <option name="x" value="295" />
+    <option name="y" value="105" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -142,13 +148,20 @@
       <option name="project" value="LOCAL" />
       <updated>1584422808197</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="text generation using rnn and lstm">
+      <created>1584433851412</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1584433851412</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -161,7 +174,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" visible="true" weight="0.2494432" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.37861916" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -170,7 +183,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lstm을 이용한 로이터 뉴스 카테고리 분류하기" />
     <MESSAGE value="lstm과 cnn의 조합을 이용한 영화 리뷰 분류하기" />
-    <option name="LAST_COMMIT_MESSAGE" value="lstm과 cnn의 조합을 이용한 영화 리뷰 분류하기" />
+    <MESSAGE value="text generation using rnn and lstm" />
+    <option name="LAST_COMMIT_MESSAGE" value="text generation using rnn and lstm" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/text_generation.py" />
@@ -203,13 +217,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/text_generation/rnn_text_generation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="111" column="38" lean-forward="true" selection-start-line="111" selection-start-column="38" selection-end-line="111" selection-end-column="38" />
+        <state relative-caret-position="155">
+          <caret line="104" column="63" selection-start-line="104" selection-start-column="54" selection-end-line="104" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/text_generation/lstm_text_generation(rnn모델로).py">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="161" selection-start-line="161" selection-end-line="161" />
+          <folding>
+            <element signature="e#306#325#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
