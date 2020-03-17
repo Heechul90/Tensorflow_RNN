@@ -109,18 +109,28 @@ print(y[:5])
 
 ### 1.2 모델 설계하기
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Embedding, Dense, LSTM
+from tensorflow.keras.layers import Embedding, Dense, LSTM, SimpleRNN
 
 
 # 각 단어의 임베딩 벡터는 10차원을 가지고, 128의 은닉 상태 크기를 가지는 LSTM을 사용
+# model = Sequential()
+# model.add(Embedding(vocab_size, 10, input_length=max_len-1))   # y데이터를 분리하였으므로 이제 X데이터의 길이는 기존 데이터의 길이 - 1
+# model.add(LSTM(128))
+# model.add(Dense(vocab_size, activation='softmax'))
+# model.summary()
+#
+# model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+# model.fit(X, y, epochs=200, verbose=2)
+
 model = Sequential()
-model.add(Embedding(vocab_size, 10, input_length=max_len-1))   # y데이터를 분리하였으므로 이제 X데이터의 길이는 기존 데이터의 길이 - 1
-model.add(LSTM(128))
+model.add(Embedding(vocab_size, 10, input_length=max_len-1)) # 레이블을 분리하였으므로 이제 X의 길이는 5
+model.add(SimpleRNN(128))
 model.add(Dense(vocab_size, activation='softmax'))
 model.summary()
 
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 model.fit(X, y, epochs=200, verbose=2)
+
 
 print("\n Test Accuracy: %.4f" % (model.evaluate(X, y)[1]))   # Test Accuracy: 0.9246
 
