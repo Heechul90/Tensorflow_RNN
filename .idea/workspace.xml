@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2980621f-4311-4dd3-888f-66688b12abcd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rnn/LSTM을 이용한 로이터 뉴스 카테고리 분류하기.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rnn/LSTM을 이용한 로이터 뉴스 카테고리 분류하기.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="76" lean-forward="true" selection-start-line="73" selection-end-line="76" />
+            <state relative-caret-position="155">
+              <caret line="78" column="29" lean-forward="true" selection-start-line="78" selection-start-column="29" selection-end-line="78" selection-end-column="29" />
               <folding>
                 <element signature="e#52#86#0" expanded="true" />
               </folding>
@@ -138,6 +136,14 @@
       <option name="presentableId" value="Default" />
       <updated>1584061766078</updated>
     </task>
+    <task id="LOCAL-00001" summary="lstm을 이용한 로이터 뉴스 카테고리 분류하기">
+      <created>1584422275169</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584422275169</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -163,6 +169,10 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="lstm을 이용한 로이터 뉴스 카테고리 분류하기" />
+    <option name="LAST_COMMIT_MESSAGE" value="lstm을 이용한 로이터 뉴스 카테고리 분류하기" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/text_generation.py" />
     <entry file="file://$PROJECT_DIR$/text_generation/rnn_text_generation.py">
@@ -184,8 +194,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rnn/LSTM을 이용한 로이터 뉴스 카테고리 분류하기.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="76" lean-forward="true" selection-start-line="73" selection-end-line="76" />
+        <state relative-caret-position="155">
+          <caret line="78" column="29" lean-forward="true" selection-start-line="78" selection-start-column="29" selection-end-line="78" selection-end-column="29" />
           <folding>
             <element signature="e#52#86#0" expanded="true" />
           </folding>
