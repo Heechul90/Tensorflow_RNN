@@ -87,6 +87,7 @@ for line in text:                              # 1,214 개의 샘플에 대해�
         sequences.append(sequence)
 
 sequences[:11]                                 # 11개의 샘플 출력
+len(sequences)
 
 # 어떤 정수가 어떤 단어를 의미하는지 알아보기 위해 인덱스로부터 단어를 찾는 index_to_word를 만듭니다.
 index_to_word={}
