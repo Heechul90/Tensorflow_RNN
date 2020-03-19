@@ -60,6 +60,30 @@ headline[:5]
 # 이제 데이터 전처리를 수행합니다.
 # 여기서 선택한 전처리는 구두점 제거와 단어의 소문자화입니다.
 # 전처리를 수행하고, 다시 샘플 5개를 출력합니다.
+########################################################################################################################
+# 문자열 응용하기
+# 'Hi, allone'.replace('allone', 'heechul')            # 문자열 바꾸기
+# 'alline'. translate(str.maketrans('aeiou', '12345')) # 문자 바꾸기
+# 'allone 대표님 차장님 이사님 과장님'.split()              # 문자열 불리하기
+# ' '.join(['올원', '대표님', '이사님', '차장님', '과장님']) # 구분자 문자열과 문자열 리스트 연결하기
+# 'Allone'.upper()                                     # 소문자를 대문자로 바꾸기
+# 'Allone'.lower()                                     # 대문자를 소문자로 바꾸기
+# '   Allone   '.lstrip()                              # 왼쪽 공백 삭제하기
+# '   Allone   '.rstrip()                              # 오른쪽 공백 삭제하기
+# '   Allone   '.strip()                               # 양쪽 공백 삭제하기
+# ', Allone..'.lstrip(',.')                            # 왼쪽 특정문자 삭제하기
+# ', Allone..;'.rstrip('.;')                           # 오른쪽 특정문자 삭제하기
+# ', Allone..;'.strip('.;, ')                          # 양쪽 특정문자 삭제하기
+# import string
+# ', Allone..;'.strip(string.punctuation + ' ')        # 양쪽 특정문자 삭제하기
+# 'heechul'.ljust(10)                                  # 문자열 왼쪽 정렬하기
+# 'heechul'.rjust(10)                                  # 문자열 오른쪽 정렬하기
+# 'heechul'.ljust(10)                                  # 문자열 가운데 정렬하기
+# '36'.zfill(4)                                        # 문자열 왼쪽에 0채우기
+########################################################################################################################
+# encode(여니코드를 바이트 열로 변환): ascii, utf-8, euc-kr, cp949
+# decode(바이트 열을 유니코드로 변환)
+
 def repreprocessing(s):
     s = s.encode('utf8').decode('ascii', 'ignore')
     return ''.join(c for c in s if c not in punctuation).lower() # 구두점 제거와 동시에 소문자화
@@ -67,21 +91,21 @@ def repreprocessing(s):
 text = [repreprocessing(x) for x in headline]
 text[:5]
 
+### 텍스트 벡터화: 텍스트를 수치형 텐서로 변환하는 과정
 # 기존의 출력과 비교하면 모든 단어들이 소문자화되었으며 N.F.L.이나 Cheerleaders’ 등과 같이 기존에 구두점이 붙어있던 단어들에서 구두점이 제거되었습니다.
-#
+# 텍스트를 나누는 단위를 토큰(token), 텍스트를 토큰으로 나누는 것을 토큰화(tokenization)
 # 단어 집합(vocabulary)을 만들고 크기를 확인
 t = Tokenizer()
-t.fit_on_texts(text)
-vocab_size = len(t.word_index) + 1
+t.fit_on_texts(text)                      # t.fit_on_texts = 단어 인텍스를 구축
+vocab_size = len(t.word_index) + 1        # t.word_index = 구축된 단어와 인덱스를 튜플로 반환
 print('단어 집합의 크기 : %d' % vocab_size)
 
 # 총 3,494개의 단어가 존재합니다.
-#
 # 정수 인코딩과 동시에 하나의 문장을 여러 줄로 분해하여 훈련 데이터를 구성
 sequences = list()
 
 for line in text:                              # 1,214 개의 샘플에 대해서 샘플을 1개씩 가져온다.
-    encoded = t.texts_to_sequences([line])[0]  # 각 샘플에 대한 정수 인코딩
+    encoded = t.texts_to_sequences([line])[0]  # 문자열을 정수 인덱스로 변환
     for i in range(1, len(encoded)):
         sequence = encoded[:i+1]
         sequences.append(sequence)
@@ -94,7 +118,7 @@ index_to_word={}
 for key, value in t.word_index.items(): # 인덱스를 단어로 바꾸기 위해 index_to_word를 생성
     index_to_word[value] = key
 
-print('빈도수 상위 582번 단어 : {}'.format(index_to_word[582]))
+print('빈도수 상위 582번 단어 : {}'.format(index_to_word[1]))
 
 # y 데이터를 분리하기 전에 전체 샘플의 길이를 동일하게 만드는 패딩 작업을 수행합니다.
 # 패딩 작업을 수행하기 전에 가장 긴 샘플의 길이를 확인합니다.
@@ -102,7 +126,9 @@ max_len = max(len(l) for l in sequences)
 print('샘플의 최대 길이 : {}'.format(max_len))
 
 # 가장 긴 샘플의 길이인 24로 모든 샘플의 길이를 패딩
-sequences = pad_sequences(sequences, maxlen=max_len, padding='pre')
+sequences = pad_sequences(sequences,
+                          maxlen=max_len,  # 최대 길이를 설정
+                          padding='pre')   # pre: 앞으로 값을 채움, post: 뒤로 값을 채움
 print(sequences[:3])
 
 # 맨 우측 단어만 레이블로 분리
@@ -122,7 +148,15 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Embedding, Dense, LSTM
 
 
-# 각 단어의 임베딩 벡터는 10차원을 가지고, 128의 은닉 상태 크기를 가지는 LSTM을 사용
+### 각 단어의 임베딩 벡터는 10차원을 가지고, 128의 은닉 상태 크기를 가지는 LSTM을 사용
+# Embedding() : Embedding()은 단어를 밀집 벡터로 만드는 역할을 합니다.
+# 인공 신경망 용어로는 임베딩 층(embedding layer)을 만드는 역할을 합니다.
+# Embedding()은 정수 인코딩이 된 단어들을 입력을 받아서 임베딩을 수행합니다.
+# -	        원-핫 벡터	            임베딩 벡터
+# 차원	    고차원(단어 집합의 크기)	저차원
+# 다른 표현	희소 벡터의 일종	        밀집 벡터의 일종
+# 표현 방법	수동	                    훈련 데이터로부터 학습함
+# 값의 타입	1과 0	                실수
 model = Sequential()
 model.add(Embedding(vocab_size, 10, input_length=max_len-1))   # y데이터를 분리하였으므로 이제 X데이터의 길이는 기존 데이터의 길이 - 1
 model.add(LSTM(128))
