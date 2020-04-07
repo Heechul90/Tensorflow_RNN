@@ -98,6 +98,7 @@ def repreprocessing(s):
 
 text = [repreprocessing(x) for x in headline]
 text[:5]
+len(text)
 
 ### 텍스트 벡터화: 텍스트를 수치형 텐서로 변환하는 과정
 # 기존의 출력과 비교하면 모든 단어들이 소문자화되었으며 N.F.L.이나 Cheerleaders’ 등과 같이 기존에 구두점이 붙어있던 단어들에서 구두점이 제거되었습니다.
